@@ -1,0 +1,112 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400&display=swap');
+    </style>
+    <link rel="stylesheet" type="text/css" href="index.css">
+    <script>
+        const fileAddedStatus = (number) => {
+            const check = document.createElement('div');
+            const addFileButton = document.getElementById(`add-file${number}-button`);
+            const fileNumberContainer = document.getElementById(`file-number${number}-container`);
+
+            check.innerHTML = '<img src="images/chek.svg" alt="">';
+            fileNumberContainer.append(check);
+            addFileButton.innerHTML = '<img src="images/edit.svg" alt="">';
+            addFileButton.onclick = function () {
+                this.disabled = 'disabled';
+            }
+
+        }
+    </script>
+</head>
+<body>
+<div class="container">
+    <div class="conditions">
+        <div>В случае несогласия с результатами экзамена Кандидат имеет право на подачу апелляции:</div>
+        <ul>
+            <li><span>сроки подачи: не позднее 6 недель с даты письменного экзамена.</span></li>
+            <li><span>сроки рассмотрения: от 2 дней до 3 недель с даты получения запроса.</span></li>
+            <li><span>стоимость: 9500 рублей* +100 рублей комиссия за онлайн перевод</span></li>
+        </ul>
+    </div>
+    <div class="steps">
+        <div class="step">
+            <div class="step-title">СКАЧАЙТЕ И ЗАПОЛНИТЕ <br> два файла с заявлением <br> на апелляцию</div>
+            <div class="doc-forms">
+                <div class="frame">
+                    <button class="frame-status">
+                        <img src="images/download.svg" alt="">
+                    </button>
+                    <img class="pdf" src="images/pdf1.svg" alt="">
+                    <div class="link-container">
+                        <a href="">Скачать</a>
+                    </div>
+                </div>
+                <div class="frame">
+                    <button class="frame-status">
+                        <img src="images/download.svg" alt="">
+                    </button>
+                    <img class="pdf" src="images/pdf2.svg" alt="">
+                    <div class="link-container">
+                        <a href="">Скачать</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="step">
+            <div class="step-title">ОТСКАНИРУЙТЕ И ЗАГРУЗИТЕ <br> заполненные заявления</div>
+            <div class="doc-forms">
+                <div class="doc-form">
+                    <div class="frame" id="load-file-1">
+                        <button class="frame-status" onclick="fileAddedStatus(1)" id="add-file1-button">
+                            <img src="images/+.svg" alt="">
+                        </button>
+                        <div class="file-number-container" id="file-number1-container">
+                            <div><img class="pdf" src="images/1.svg" alt=""></div>
+                        </div>
+                        <div class="link-container">
+                        </div>
+                    </div>
+                </div>
+                <div class="doc-form">
+                    <div class="frame" id="load-file-2">
+                        <button class="frame-status" onclick="fileAddedStatus(2)"
+                                id="add-file2-button">
+                            <img src="images/+.svg" alt="">
+                        </button>
+                        <div class="file-number-container" id="file-number2-container">
+                            <div>
+                                <img class="pdf" src="images/2.svg" alt="">
+                            </div>
+                        </div>
+                        <div class="link-container">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="step">
+            <div>
+                <div class="step-title">ОПЛАТИТЕ <br> подачу апелляции</div>
+                <div class='appeal-price'>Стоимость апелляции - 7700 ₽</div>
+            </div>
+            <button class="pay-appeal-button">ОПЛАТА АПЕЛЛЯЦИИ</button>
+        </div>
+    </div>
+    <div class="filling-info">
+        Важная информация для корректного заполнения заявления: <br>
+        Centre name: BKC-ih Moscow IELTS Test Centre <br>
+        Centre number: RU087 <br>
+        Candidate number: Цифры в верхнем правом углу сертификата/можно не заполнять, если сертификат еще не
+        получен.
+    </div>
+</div>
+</body>
+</html>
